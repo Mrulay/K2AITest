@@ -7,7 +7,7 @@ app = flask.Flask(__name__)
 
 wordVectors = KeyedVectors.load(r'w2v.wordvectors')
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def home():
     content = request.get_json()
     try: 
