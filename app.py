@@ -5,7 +5,7 @@ from flask import request
 
 app = flask.Flask(__name__)
 
-wordVectors = KeyedVectors.load(r'C:\Users\Mrulay\Desktop\uWindsor\IRCC Project\Code\w2v.wordvectors')
+wordVectors = KeyedVectors.load(r'w2v.wordvectors')
 
 @app.route('/', methods=['GET'])
 def home():
