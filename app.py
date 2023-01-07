@@ -27,4 +27,3 @@ def home():
             return content
     except KeyError:
         return 'Input does not exist in the data' 
-app.run(host='0.0.0.0', port= 8090)
