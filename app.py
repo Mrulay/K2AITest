@@ -12,7 +12,7 @@ def home():
     content = request.get_json()
     try: 
         #prediction will happen based on the 'responseID'
-        preds = wordVectors.most_similar(content['responseID'], [], 5341)
+        preds = wordVectors.most_similar(content['responseId'], [], 5341)
         preds = [item[0] for item in preds]
         res = []
         for num, i in enumerate(preds):
