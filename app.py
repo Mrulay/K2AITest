@@ -12,6 +12,7 @@ wordVectors = KeyedVectors.load(r'w2v.wordvectors')
 @app.route('/', methods=['POST'])
 def home():
     content = request.data
+    print(content)
     #content = str(content)
     content = content.decode('UTF-8')
     content = content[20:-10].rstrip()
