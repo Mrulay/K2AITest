@@ -13,14 +13,9 @@ wordVectors = KeyedVectors.load(r'w2v.wordvectors')
 def home():
     content = request.data
     print(content)
-    #content = str(content)
-    content = content.decode('UTF-8')
-    content = content[20:-10].rstrip()
-    content = re.sub(r'\r\n', '', content)
-    content = content.replace("\'", "\"")
-    #print(content)
-    content = json.loads(content)
-    #print(type(content["responseId"]))
+    my_json = content.decode('utf8').replace("'", '"')
+    print(my_json)
+    content = json.loads(my_json)
     try: 
         #prediction will happen based on the 'responseID'
         preds = wordVectors.most_similar(content['responseId'], [], 5341)
