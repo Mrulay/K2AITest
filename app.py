@@ -13,7 +13,7 @@ wordVectors = KeyedVectors.load(r'w2v.wordvectors')
 def home():
     content = request.data
     print(content)
-    my_json = content.decode('utf8').replace("'", '"')
+    my_json = content.decode('utf8')
     print(my_json)
     content = json.loads(my_json)
     try: 
