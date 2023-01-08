@@ -29,8 +29,7 @@ def home():
             content['data'][0]['actionId'] = 'xx'
             return content
         else:
-            #content['data'][0]['actionId'] = res[0]
-            content['data'][0]['actionId'] = 'xx'
+            content['data'][0]['actionId'] = res[0]
             return content
     except KeyError:
         return 'Input does not exist in the data'
