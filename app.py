@@ -16,9 +16,10 @@ def home():
     my_json = content.decode('utf8')
     print(my_json)
     content = json.loads(my_json)
+    print(content['data'])
     try: 
         #prediction will happen based on the 'responseID'
-        preds = wordVectors.most_similar(content['responseId'], [], 5341)
+        preds = wordVectors.most_similar(content['data'][0]['responseId'], [], 5341)
         preds = [item[0] for item in preds]
         res = []
         for num, i in enumerate(preds):
