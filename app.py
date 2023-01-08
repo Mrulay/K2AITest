@@ -10,6 +10,7 @@ wordVectors = KeyedVectors.load(r'w2v.wordvectors')
 @app.route('/', methods=['POST'])
 def home():
     content = request.get_json()
+    print(content)
     try: 
         #prediction will happen based on the 'responseID'
         preds = wordVectors.most_similar(content['responseId'], [], 5341)
