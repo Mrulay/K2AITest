@@ -30,10 +30,12 @@ def home():
         if len(res)==0:
             content['data'][0]['actionId'] = 'xx'
             content['data'][0]['action'] = 'xx'
+            print(content)
             return content
         else:
             content['data'][0]['actionId'] = res[0]
             content['data'][0]['action'] = df.loc[df['ID'] == res[0]]['YMCASWO_K2__ACTION__C'][0]
+            print(content)
             return content
     except KeyError:
         return 'Input does not exist in the data'
