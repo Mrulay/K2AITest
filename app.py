@@ -1,7 +1,6 @@
 import flask
 import re 
 import json
-import pandas as pd
 from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 from flask import request
@@ -9,7 +8,8 @@ from flask import request
 app = flask.Flask(__name__)
 
 wordVectors = KeyedVectors.load(r'w2v.wordvectors')
-df = pd.read_excel(r'Actions.xlsx')
+f = open(r'data.json')
+data = json.load(f)
 
 @app.route('/', methods=['POST'])
 def home():
@@ -34,7 +34,7 @@ def home():
             return content
         else:
             content['data'][0]['actionId'] = res[0]
-            content['data'][0]['action'] = df.loc[df['ID'] == res[0]]['YMCASWO_K2__ACTION__C'][0]
+            content['data'][0]['action'] = data[res[0]]
             print(content)
             return content
     except KeyError:
