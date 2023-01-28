@@ -28,13 +28,22 @@ def home():
             if i[2] == 'o':
                 res.append(i)
         if len(res)==0:
-            content['data'][0]['actionId'] = 'xx'
-            content['data'][0]['action'] = 'xx'
+            content['data'][0]['actions'] = [{'action': 'xx', 'actionId': 'xx'}, 
+                                        {'action': 'xx', 'actionId': 'xx'},
+                                        {'action': 'xx', 'actionId': 'xx'},
+                                        {'action': 'xx', 'actionId': 'xx'}, 
+                                        {'action': 'xx', 'actionId': 'xx'}]
             print(content)
             return content
         else:
-            content['data'][0]['actionId'] = res[0]
-            content['data'][0]['action'] = data[res[0]]
+            resList = []
+            resDict ={}
+            for i in range(0,5):
+                resDict['action'] = data[res[i]]
+                resDict['actionId'] = res[i] 
+                resList.append(resDict)
+                resDict = {}
+            content['data'][0]['actions'] = resList
             print(content)
             return content
     except KeyError:
