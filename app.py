@@ -27,24 +27,30 @@ def home():
         for num, i in enumerate(preds):
             if i[2] == 'o':
                 res.append(i)
-        if len(res)==0:
-            content['data'][0]['actions'] = [{'action': 'xx', 'actionId': 'xx'}, 
-                                        {'action': 'xx', 'actionId': 'xx'},
-                                        {'action': 'xx', 'actionId': 'xx'},
-                                        {'action': 'xx', 'actionId': 'xx'}, 
-                                        {'action': 'xx', 'actionId': 'xx'}]
-            print(content)
-            return content
-        else:
-            resList = []
-            resDict ={}
-            for i in range(0,5):
-                resDict['action'] = data[res[i]]
-                resDict['actionId'] = res[i] 
-                resList.append(resDict)
-                resDict = {}
-            content['data'][0]['actions'] = resList
-            print(content)
-            return content
-    except KeyError:
-        return 'Input does not exist in the data'
+        content['data'][0]['actions'] = [{'action': 'Apply for Affordable Buss Pass', 'actionId': 'a1o4t00000000i8AAA'}, 
+                                        {'action': 'Apply for an Ontario drivers licence', 'actionId': 'a1o4t00000000CRAAY'},
+                                        {'action': 'Get a map of the city and a bus schedule - apps ?', 'actionId': 'a1o4t00000000CSAAY'},
+                                        {'action': 'Learn about public transportation options available to me', 'actionId': 'a1o4t00000000CQAAY'}, 
+                                        {'action': 'Learn more about alternative transport , car rental', 'actionId': 'a1o4t00000000aQAAQ'}]
+        return content
+#         if len(res)==0:
+#            content['data'][0]['actions'] = [{'action': 'xx', 'actionId': 'xx'}, 
+#                                        {'action': 'xx', 'actionId': 'xx'},
+#                                         {'action': 'xx', 'actionId': 'xx'},
+#                                         {'action': 'xx', 'actionId': 'xx'}, 
+#                                         {'action': 'xx', 'actionId': 'xx'}]
+#             print(content)
+#             return content
+#         else:
+#             resList = []
+#             resDict ={}
+#             for i in range(0,5):
+#                 resDict['action'] = data[res[i]]
+#                 resDict['actionId'] = res[i] 
+#                 resList.append(resDict)
+#                 resDict = {}
+#             content['data'][0]['actions'] = resList
+#             print(content)
+#             return content
+#     except KeyError:
+#         return 'Input does not exist in the data'
