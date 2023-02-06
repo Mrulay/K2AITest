@@ -52,5 +52,5 @@ def home():
 #             content['data'][0]['actions'] = resList
 #             print(content)
 #             return content
-#     except KeyError:
-#         return 'Input does not exist in the data'
+     except KeyError:
+         return 'Input does not exist in the data'
